@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Getwork – Розробка додатків</title>
+  <title>Getwork – App Development Company</title>
   <style>
-    /* === Загальні стилі === */
+    /* === Reset & Base === */
     * {
       margin: 0;
       padding: 0;
@@ -16,32 +16,37 @@
       line-height: 1.6;
       background: #f9fafc;
       color: #222;
+      overflow-x: hidden;
     }
     a { text-decoration: none; color: inherit; }
 
+    /* === Header === */
     header {
-      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      background: linear-gradient(135deg, #0061ff, #00d4ff);
       color: #fff;
       padding: 20px;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     header h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       font-weight: 700;
+      letter-spacing: 1px;
     }
     header p {
       font-size: 1rem;
       opacity: 0.9;
+      margin-top: 4px;
     }
 
     nav {
       margin-top: 15px;
     }
     nav a {
-      margin: 0 12px;
+      margin: 0 14px;
       font-weight: 500;
       color: #fff;
       transition: 0.3s;
@@ -50,138 +55,151 @@
       color: #ffe600;
     }
 
-    /* === Hero секція === */
+    /* === Hero Section === */
     .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 60px 20px;
+      padding: 80px 20px;
       background: #fff;
+      animation: fadeIn 1.2s ease-in-out;
     }
     .hero h2 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin-bottom: 20px;
-      color: #0072ff;
+      color: #0061ff;
     }
     .hero p {
-      max-width: 600px;
-      font-size: 1.1rem;
-      margin-bottom: 25px;
+      max-width: 650px;
+      font-size: 1.15rem;
+      margin-bottom: 30px;
       color: #555;
     }
     .hero button {
-      background: #0072ff;
+      background: #0061ff;
       color: #fff;
       border: none;
-      padding: 14px 26px;
+      padding: 15px 30px;
       font-size: 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       transition: 0.3s;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
     }
     .hero button:hover {
-      background: #005fcc;
+      background: #004ecc;
+      transform: scale(1.05);
     }
 
-    /* === Про нас === */
+    /* === About Section === */
     .about {
-      padding: 60px 20px;
+      padding: 70px 20px;
       background: #f0f7ff;
       text-align: center;
     }
     .about h3 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 20px;
-      color: #0072ff;
+      color: #0061ff;
     }
     .about p {
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto;
       color: #444;
       font-size: 1.05rem;
     }
 
-    /* === Послуги === */
+    /* === Services Section === */
     .services {
-      padding: 60px 20px;
+      padding: 70px 20px;
       background: #fff;
       text-align: center;
     }
     .services h3 {
-      font-size: 1.8rem;
-      margin-bottom: 40px;
-      color: #0072ff;
+      font-size: 2rem;
+      margin-bottom: 50px;
+      color: #0061ff;
     }
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 26px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     .service-card {
       background: #f9fbff;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 30px 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       transition: 0.3s;
     }
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.08);
     }
     .service-card h4 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      color: #0072ff;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+      color: #0061ff;
     }
     .service-card p {
-      font-size: 0.95rem;
+      font-size: 0.97rem;
       color: #555;
     }
 
-    /* === Контакти === */
+    /* === Contact Section === */
     .contact {
-      padding: 60px 20px;
+      padding: 70px 20px;
       background: #f0f7ff;
       text-align: center;
     }
     .contact h3 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       margin-bottom: 20px;
-      color: #0072ff;
+      color: #0061ff;
     }
     .contact p {
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       font-size: 1.05rem;
+      color: #444;
     }
     .contact a {
       display: inline-block;
       margin: 10px;
-      padding: 12px 22px;
-      background: #0072ff;
+      padding: 14px 24px;
+      background: #0061ff;
       color: #fff;
-      border-radius: 6px;
+      border-radius: 8px;
       transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     .contact a:hover {
-      background: #005fcc;
+      background: #004ecc;
+      transform: translateY(-2px);
     }
 
     /* === Footer === */
     footer {
       background: #0a2c4e;
       color: #fff;
-      padding: 18px;
+      padding: 22px;
       text-align: center;
       font-size: 0.9rem;
+      letter-spacing: 0.5px;
     }
 
-    /* === Адаптив === */
-    @media (max-width: 600px) {
-      header h1 { font-size: 1.5rem; }
-      .hero h2 { font-size: 1.6rem; }
+    /* === Animations === */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* === Responsive === */
+    @media (max-width: 700px) {
+      header h1 { font-size: 1.7rem; }
+      .hero h2 { font-size: 1.8rem; }
       nav a { display: inline-block; margin: 6px; }
     }
   </style>
@@ -189,56 +207,55 @@
 <body>
   <header>
     <h1>Getwork</h1>
-    <p>Розробка мобільних та веб-додатків</p>
+    <p>Innovative App Development Company</p>
     <nav>
-      <a href="#about">Про нас</a>
-      <a href="#services">Послуги</a>
-      <a href="#contact">Контакти</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Ми створюємо інноваційні додатки</h2>
-    <p>Getwork – це команда професіоналів, яка розробляє сучасні та зручні мобільні й веб-додатки. Ми допомагаємо бізнесу масштабуватись і впроваджувати найновіші технології.</p>
-    <button>Зв'язатися з нами</button>
+    <h2>We Build Apps That Inspire</h2>
+    <p>At Getwork, we specialize in crafting powerful, user-friendly mobile and web applications that help businesses grow and users enjoy seamless digital experiences.</p>
+    <button>Contact Us</button>
   </section>
 
   <section id="about" class="about">
-    <h3>Про нас</h3>
-    <p>Наша компанія спеціалізується на створенні рішень, які поєднують функціональність і стиль. Ми впроваджуємо новітні підходи до UI/UX дизайну, забезпечуємо безпеку та високу продуктивність додатків.</p>
+    <h3>About Us</h3>
+    <p>We are a team of passionate developers, designers, and innovators dedicated to building digital products that combine performance, functionality, and modern design. Our mission is to transform ideas into successful applications that make a difference.</p>
   </section>
 
   <section id="services" class="services">
-    <h3>Наші послуги</h3>
+    <h3>Our Services</h3>
     <div class="service-grid">
       <div class="service-card">
-        <h4>Мобільні додатки</h4>
-        <p>Створення нативних і кросплатформних додатків для iOS та Android.</p>
+        <h4>Mobile Apps</h4>
+        <p>Development of native and cross-platform apps for iOS and Android with excellent performance.</p>
       </div>
       <div class="service-card">
-        <h4>Веб-додатки</h4>
-        <p>Розробка веб-платформ, панелей адміністратора та SaaS-рішень.</p>
+        <h4>Web Applications</h4>
+        <p>Design and development of modern web platforms, admin dashboards, and SaaS solutions.</p>
       </div>
       <div class="service-card">
-        <h4>UI/UX дизайн</h4>
-        <p>Сучасний дизайн з фокусом на зручність і привабливість для користувача.</p>
+        <h4>UI/UX Design</h4>
+        <p>Creative, user-centered design that ensures intuitive navigation and engaging experiences.</p>
       </div>
       <div class="service-card">
-        <h4>Технічна підтримка</h4>
-        <p>Супровід та оновлення готових рішень для їх стабільної роботи.</p>
+        <h4>Support & Maintenance</h4>
+        <p>Ongoing updates, bug fixing, and optimization to keep your apps secure and reliable.</p>
       </div>
     </div>
   </section>
 
   <section id="contact" class="contact">
-    <h3>Контакти</h3>
-    <p>Хочете замовити розробку чи дізнатись більше? Напишіть нам:</p>
-    <a href="mailto:info@getwork.com">info@getwork.com</a>
-    <a href="tel:+380999999999">+38 (099) 999-99-99</a>
+    <h3>Contact Us</h3>
+    <p>Ready to bring your idea to life? Get in touch with us today:</p>
+    <a href="mailto:getwork.app.official@gmail.com">getwork.app.official@gmail.com</a>
   </section>
 
   <footer>
-    © 2025 Getwork. Усі права захищені.
+    © 2025 Getwork. All rights reserved.
   </footer>
 </body>
 </html>
